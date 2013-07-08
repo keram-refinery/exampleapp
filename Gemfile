@@ -50,12 +50,13 @@ gem 'turbolinks', '~> 1.2.0', :git => 'https://github.com/rails/turbolinks.git',
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-
-# Refinery CMS
+gem 'factory_girl_rails'
 gem 'friendly_id', :git => 'https://github.com/FriendlyId/friendly_id.git',  :branch => 'rails4'
 gem 'globalize3', :git => 'https://github.com/keram-refinery/globalize3.git', :branch => 'rails4'
 gem 'routing-filter', '~> 0.3.1', :git => 'git://github.com/svenfuchs/routing-filter.git', :branch => 'master'
 gem 'seo_meta', :git => 'https://github.com/parndt/seo_meta.git', :branch => 'master'
+
+# Refinery CMS
 gem 'refinerycms', :git => 'https://github.com/keram-refinery/refinerycms.git', :branch => 'refinery_light'
 gem 'refinerycms-settings', :git => 'https://github.com/keram-refinery/refinerycms-settings.git', :branch => 'refinery_light'
 

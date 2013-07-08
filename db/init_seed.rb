@@ -16,11 +16,11 @@ module Refinery
     def self.import_users
       users = [
         {:username => 'admin', :email => 'admin@admin.com', :roles => [:superuser, :refinery]},
-        {:username => 'keram', :email => 'keram@trip.sk', :roles => [:refinery]}
+        {:username => 'test', :email => 'test@test.com', :roles => [:refinery]}
       ]
 
       users.each do |user|
-        u = User.find_by_email(user[:email])
+        u = User.find_by(email: user[:email])
         roles = user.delete(:roles)
         unless u
           p = (Rails.env.production? && false) ? (0...32).map{ ('a'..'z').to_a[rand(26)] }.join : 'nbusr123'
@@ -36,13 +36,13 @@ module Refinery
     end
 
     def self.find_page (id, slug, title)
-      page = Page.find_by_id(id) if id
+      page = Page.find_by(id: id) if id
       current_locale = ::I18n.locale
 
       I18n.frontend_locales.each do |lang|
         ::I18n.locale = lang
-        page = Page.find_by_title(title[lang]) unless page
-        page = Page.find_by_slug(slug) unless page
+        page = Page.find_by(title: title[lang]) unless page
+        page = Page.find_by(slug: slug) unless page
       end
 
       ::I18n.locale = current_locale
@@ -55,7 +55,7 @@ module Refinery
       menu_pages = []
 
       pages.each do |s, p|
-        tmp_arr[p[:menu_position]] = Page.find_by_title(p[:title][::I18n.locale]) if p[:menu_position]
+        tmp_arr[p[:menu_position]] = Page.find_by(title:p[:title][::I18n.locale]) if p[:menu_position]
       end
 
       tmp_arr.compact.each do |p|
@@ -86,7 +86,7 @@ module Refinery
         end
 
         Pages.default_parts.each_with_index do |part_title, i|
-          part = page.parts.find_by_title(part_title)
+          part = page.parts.find_by(title: part_title)
           unless part
             page.parts.create({
                 :title => part_title,
@@ -103,7 +103,7 @@ module Refinery
           Pages.default_parts.each do |part_title|
             file_part_name = part_title.downcase.gsub(/ /, '_')
             part_file_path = Rails.root.join("db/templates/#{psym}_#{file_part_name}_#{lang}.html")
-            part = page.parts.find_by_title(part_title)
+            part = page.parts.find_by(title:part_title)
             part_body = IO.read(part_file_path) rescue ''
             part.update_attributes(:body => part_body)
           end
@@ -136,7 +136,7 @@ module Refinery
 
     def self.create_page_parts page
       Pages.default_parts.each_with_index do |part_title, i|
-        part = page.parts.find_by_title(part_title)
+        part = page.parts.find_by(title:part_title)
         unless part
           page.parts.create({
               :title => part_title,
@@ -198,36 +198,11 @@ module Refinery
       }
     }
 
-
     puts 'import/update settings'
     import_settings
     puts 'import/update users'
     import_users
 #    puts 'import/update pages'
 #    import_pages @default_pages
-#    puts 'import/update global effort pages'
-#    import_home_efforts_pages
-#    reducing_expenses_page = ::Refinery::Page.where({
-#          :parent_id => 1,
-#          :effort_type => :reducing_expenses}).first
-#
-#    create_global_year 2009, reducing_expenses_page
-#
-#    puts 'import/update import_country_pages'
-#    import_country_pages
-#    puts 'import/update year pages'
-#    sk_page = Page.countries.find_by_title('Slovakia')
-#    if sk_page
-#      create_year 2009, sk_page
-#      create_year 2010, sk_page
-#      create_year 2011, sk_page
-#    end
-#    cs_page = Page.countries.find_by_title('Czech Republic')
-#    p cs_page
-#    if cs_page
-#      create_year 2009, cs_page
-#      create_year 2010, cs_page
-#      create_year 2011, cs_page
-#    end
   end
 end

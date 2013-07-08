@@ -22,3 +22,25 @@ development:
   min_messages: warning
   host: localhost
   port: 5432
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: exampleapp_prod
+  pool: 5
+  username: postgres
+  password: postgres
+  min_messages: warning
+  host: localhost
+  port: 5432
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: exampleapp_test
+  pool: 5
+  username: postgres
+  password: postgres
+  min_messages: warning
+  host: localhost
+  port: 5432
