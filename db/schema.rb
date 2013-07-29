@@ -68,14 +68,14 @@ ActiveRecord::Schema.define(version: 20130620221011) do
     t.string   "slug"
     t.boolean  "show_in_menu",        default: true
     t.string   "link_url"
-    t.boolean  "deletable",           default: true,  null: false
-    t.boolean  "draft",               default: false, null: false
-    t.boolean  "skip_to_first_child", default: false, null: false
-    t.integer  "lft",                                 null: false
-    t.integer  "rgt",                                 null: false
-    t.integer  "depth",               default: 0,     null: false
-    t.string   "view_template"
-    t.string   "layout_template"
+    t.boolean  "deletable",           default: true,          null: false
+    t.boolean  "draft",               default: false,         null: false
+    t.boolean  "skip_to_first_child", default: false,         null: false
+    t.integer  "lft",                                         null: false
+    t.integer  "rgt",                                         null: false
+    t.integer  "depth",               default: 0,             null: false
+    t.string   "view_template",       default: "show",        null: false
+    t.string   "layout_template",     default: "application", null: false
     t.string   "plugin_page_id"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -17,7 +17,7 @@ gem 'sass-rails'#, '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'#, '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -28,7 +28,7 @@ gem 'jquery-rails', '~> 3.0.1'
 gem 'jquery-ui-rails', '~> 4.0.3'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '~> 1.2.0', :git => 'https://github.com/rails/turbolinks.git', :branch => 'master'
+gem 'turbolinks', '~> 2.0.0', :git => 'https://github.com/rails/turbolinks.git', :branch => 'master'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 #gem 'jbuilder', '~> 1.4.2'
@@ -53,12 +53,15 @@ gem 'turbolinks', '~> 1.2.0', :git => 'https://github.com/rails/turbolinks.git',
 gem 'factory_girl_rails'
 gem 'friendly_id', :git => 'https://github.com/FriendlyId/friendly_id.git',  :branch => 'rails4'
 gem 'globalize3', :git => 'https://github.com/keram-refinery/globalize3.git', :branch => 'rails4'
-gem 'routing-filter', '~> 0.3.1', :git => 'git://github.com/svenfuchs/routing-filter.git', :branch => 'master'
+gem 'routing-filter', :git => 'git://github.com/svenfuchs/routing-filter.git', :branch => 'master'
 gem 'seo_meta', :git => 'https://github.com/parndt/seo_meta.git', :branch => 'master'
 
 # Refinery CMS
 gem 'refinerycms', :git => 'https://github.com/keram-refinery/refinerycms.git', :branch => 'refinery_light'
+#gem 'refinerycms', :path => '../cutdef/vendor/refinerycms'# :git => 'https://github.com/keram-refinery/refinerycms.git', :branch => 'refinery_light'
 gem 'refinerycms-settings', :git => 'https://github.com/keram-refinery/refinerycms-settings.git', :branch => 'refinery_light'
+gem 'refinery-epiceditor', :git => 'https://github.com/keram-refinery/refinery-epiceditor.git', :branch => 'master'
+#gem 'refinery-epiceditor', :path => '../cutdef/vendor/refinerycms-clientside/src/refinery-epiceditor/'#, :git => 'https://github.com/keram-refinery/refinery-epiceditor.git'
 
 # Specify additional Refinery CMS Extensions here (all optional):
 # gem 'refinerycms-i18n', '~> 2.0.0'

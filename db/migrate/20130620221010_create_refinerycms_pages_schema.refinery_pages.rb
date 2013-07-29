@@ -1,4 +1,3 @@
-# This migration comes from refinery_pages (originally 20100913234708)
 class CreateRefinerycmsPagesSchema < ActiveRecord::Migration
   def up
     create_table :refinery_page_parts do |t|
@@ -22,8 +21,8 @@ class CreateRefinerycmsPagesSchema < ActiveRecord::Migration
       t.integer :lft, :null => false
       t.integer :rgt, :null => false
       t.integer :depth, :null => false, :default => 0
-      t.string  :view_template
-      t.string  :layout_template
+      t.string  :view_template, :null => false, :default => 'show'
+      t.string  :layout_template, :null => false, :default => 'application'
       t.string  :plugin_page_id
 
       t.timestamps
