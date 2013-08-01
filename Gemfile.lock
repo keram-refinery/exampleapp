@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/keram-refinery/refinery-epiceditor.git
-  revision: 0c7272a4b463921b34ec9ca4c958b8c717877f1e
+  revision: 6104e7f3fd37cab1b831620c1c80574d08268d8b
   branch: master
   specs:
     refinery-epiceditor (0.0.1)
@@ -48,7 +48,7 @@ GIT
 
 GIT
   remote: https://github.com/keram-refinery/refinerycms.git
-  revision: 15879b2c6f1968103b1f25675532d55346e44833
+  revision: 1f2635e63ae6abec5402a13319f4d76e2f6a01db
   branch: refinery_light
   specs:
     refinerycms (3.0.0)
