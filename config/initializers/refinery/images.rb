@@ -1,16 +1,13 @@
+# encoding: utf-8
 Refinery::Images.configure do |config|
   # Configures the maximum allowed upload size (in bytes) for an image
   # config.max_image_size = 5242880
 
   # Configure how many images per page should be displayed when a dialog is presented that contains images
-  # config.pages_per_dialog = 18
-
-  # Configure how many images per page should be displayed when a dialog is presented that
-  # contains images and image resize options
-  # config.pages_per_dialog_that_have_size_options = 12
+  # config.per_dialog_page = 20
 
   # Configure how many images per page should be displayed in the list of images in the admin area
-  # config.pages_per_admin_index = 20
+  # config.per_admin_page = 20
 
   # Configure image sizes
   # config.user_image_sizes = {:small=>"110x110>", :medium=>"225x255>", :large=>"450x450>"}
@@ -30,15 +27,19 @@ Refinery::Images.configure do |config|
   # config.s3_bucket_name = ENV['S3_BUCKET']
   # config.s3_access_key_id = ENV['S3_KEY']
   # config.s3_secret_access_key = ENV['S3_SECRET']
-  # config.s3_region = ENV['S3_REGION]
+  # config.s3_region = ENV['S3_REGION']
 
   # Configure Dragonfly
   # This is where in the middleware stack to insert the Dragonfly middleware
-  # config.dragonfly_insert_before = "ActionDispatch::Callbacks"
-  # config.dragonfly_secret = "4ca65d25506ffe6ea2402abbf182fc96436dde0ec24e10aa"
   # If you decide to trust file extensions replace :ext below with :format
   # config.dragonfly_url_format = "/system/images/:job/:basename.:ext"
+  # config.dragonfly_url_host = ""
   # config.datastore_root_path = "/home/web-data/work/iness/cutdef/public/system/refinery/images"
   # config.trust_file_extensions = false
+
+  # Configure Dragonfly custom storage backend
+  # The custom_backend setting by default defers to the core setting for this but can be set just for images.
+  # config.custom_backend_class = nil
+  # config.custom_backend_opts = {}
 
 end

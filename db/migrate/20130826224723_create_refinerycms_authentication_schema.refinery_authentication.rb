@@ -7,10 +7,11 @@ class CreateRefinerycmsAuthenticationSchema < ActiveRecord::Migration
       t.integer :role_id, :null => false
     end
 
+    add_index :refinery_roles_users, [:role_id, :user_id], :unique => true
     add_index :refinery_roles_users, [:user_id, :role_id], :unique => true
 
     create_table :refinery_roles do |t|
-      t.string :title, :null => false, :limit => 32
+      t.string :title, :null => false, :limit => Refinery::Role::TITLE_MAX_LENGTH
     end
 
     add_index :refinery_roles, :title, :unique => true
@@ -21,6 +22,8 @@ class CreateRefinerycmsAuthenticationSchema < ActiveRecord::Migration
       t.integer :position, :null => false
     end
 
+    add_index :refinery_user_plugins, :name
+    add_index :refinery_user_plugins, [:user_id, :name], :unique => true
     add_index :refinery_user_plugins, [:user_id, :position, :name], :unique => true
 
     create_table :refinery_users do |t|
@@ -36,7 +39,7 @@ class CreateRefinerycmsAuthenticationSchema < ActiveRecord::Migration
       t.datetime  :remember_created_at
       t.string    :reset_password_token
       t.datetime  :reset_password_sent_at
-      t.string    :locale, :null => false, :default => :en, :limit => 8
+      t.string    :locale, :null => false, :default => :en, :limit => Refinery::User::LOCALE_MAX_LENGTH
 
       t.timestamps
     end

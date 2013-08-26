@@ -1,9 +1,11 @@
+# This migration comes from refinery_pages (originally 20100913234708)
 class CreateRefinerycmsPagesSchema < ActiveRecord::Migration
   def up
     create_table :refinery_page_parts do |t|
       t.references :page, :null => false
       t.string   :title, :null => false
       t.integer  :position, :null => false, :default => 0
+      t.boolean  :active, :null => false, :default => true
 
       t.timestamps
     end

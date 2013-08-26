@@ -1,4 +1,4 @@
-# This migration comes from seo_meta_engine (originally 20110329222114)
+# This migration comes from seo_meta (originally 20110329222114)
 class CreateSeoMeta < ActiveRecord::Migration
 
   def self.up

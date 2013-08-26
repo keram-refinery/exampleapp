@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130620221011) do
+ActiveRecord::Schema.define(version: 20130826224732) do
 
   create_table "refinery_images", force: true do |t|
     t.string   "image_mime_type", limit: 64, null: false
@@ -39,9 +39,10 @@ ActiveRecord::Schema.define(version: 20130620221011) do
   add_index "refinery_page_part_translations", ["refinery_page_part_id"], name: "index_refinery_page_part_translations_on_refinery_page_part_id", using: :btree
 
   create_table "refinery_page_parts", force: true do |t|
-    t.integer  "page_id",                null: false
-    t.string   "title",                  null: false
-    t.integer  "position",   default: 0, null: false
+    t.integer  "page_id",                   null: false
+    t.string   "title",                     null: false
+    t.integer  "position",   default: 0,    null: false
+    t.boolean  "active",     default: true, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -88,10 +89,10 @@ ActiveRecord::Schema.define(version: 20130620221011) do
   add_index "refinery_pages", ["updated_at"], name: "index_refinery_pages_on_updated_at", using: :btree
 
   create_table "refinery_resources", force: true do |t|
-    t.string   "file_mime_type", limit: 64, null: false
-    t.string   "file_name",                 null: false
-    t.integer  "file_size",                 null: false
-    t.string   "file_uid",                  null: false
+    t.string   "file_mime_type", limit: 128, null: false
+    t.string   "file_name",                  null: false
+    t.integer  "file_size",                  null: false
+    t.string   "file_uid",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -110,22 +111,8 @@ ActiveRecord::Schema.define(version: 20130620221011) do
     t.integer "role_id", null: false
   end
 
+  add_index "refinery_roles_users", ["role_id", "user_id"], name: "index_refinery_roles_users_on_role_id_and_user_id", unique: true, using: :btree
   add_index "refinery_roles_users", ["user_id", "role_id"], name: "index_refinery_roles_users_on_user_id_and_role_id", unique: true, using: :btree
-
-  create_table "refinery_settings", force: true do |t|
-    t.string   "name",                                             null: false
-    t.text     "value"
-    t.boolean  "destroyable",                default: true,        null: false
-    t.string   "scoping",         limit: 32
-    t.boolean  "restricted",                 default: false,       null: false
-    t.string   "form_value_type", limit: 32, default: "text_area", null: false
-    t.string   "slug",                                             null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "refinery_settings", ["name", "scoping"], name: "index_refinery_settings_on_name_and_scoping", unique: true, using: :btree
-  add_index "refinery_settings", ["slug"], name: "index_refinery_settings_on_slug", unique: true, using: :btree
 
   create_table "refinery_user_plugins", force: true do |t|
     t.integer "user_id",  null: false
@@ -133,6 +120,8 @@ ActiveRecord::Schema.define(version: 20130620221011) do
     t.integer "position", null: false
   end
 
+  add_index "refinery_user_plugins", ["name"], name: "index_refinery_user_plugins_on_name", using: :btree
+  add_index "refinery_user_plugins", ["user_id", "name"], name: "index_refinery_user_plugins_on_user_id_and_name", unique: true, using: :btree
   add_index "refinery_user_plugins", ["user_id", "position", "name"], name: "index_refinery_user_plugins_on_user_id_and_position_and_name", unique: true, using: :btree
 
   create_table "refinery_users", force: true do |t|

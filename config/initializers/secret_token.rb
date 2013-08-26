@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Exampleapp::Application.config.secret_key_base = 'b3c829fb6163a3b49a9cfe81bd50c0d06e9404effe6eaf258b644476f36af92a2cfc2b69289875ffe75f78f61b1292dcf86a86cf683929fcd1d8e20d5ba3a698'
+Exampleapp::Application.config.secret_key_base = Refinery.find_or_set_secret_token

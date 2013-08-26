@@ -1,37 +1,31 @@
 GIT
-  remote: git://github.com/svenfuchs/routing-filter.git
-  revision: d6378d0dedf10106501974216f36908182211cc1
+  remote: git://github.com/airblade/paper_trail.git
+  revision: b4e53f861a58ef46c698c42f0ec044535b100c3b
   branch: master
   specs:
-    routing-filter (0.4.0.pre)
-      actionpack
+    paper_trail (3.0.0.beta)
+      activerecord (>= 3.0, < 5.0)
 
 GIT
-  remote: https://github.com/FriendlyId/friendly_id.git
-  revision: c49ce30ff2b370669ccf1708e99fb08ab51435d9
-  branch: rails4
-  specs:
-    friendly_id (4.1.0.beta.2)
-
-GIT
-  remote: https://github.com/keram-refinery/globalize3.git
-  revision: f9a2900e0094683e233efc27b1b78b1c50ba81d6
+  remote: git://github.com/keram-refinery/globalize3.git
+  revision: 7b276cbab773d0c8ac5647cfc33f4d08489249a1
   branch: rails4
   specs:
     globalize3 (0.3.0)
       activemodel (>= 4.0.0)
       activerecord (>= 4.0.0)
+      paper_trail (~> 3.0.0.beta)
 
 GIT
-  remote: https://github.com/keram-refinery/refinery-epiceditor.git
-  revision: 6104e7f3fd37cab1b831620c1c80574d08268d8b
+  remote: git://github.com/keram-refinery/refinery-epiceditor.git
+  revision: 7bd332bf4422833895581ad985e43926f33c83e6
   branch: master
   specs:
     refinery-epiceditor (0.0.1)
       redcarpet (~> 3.0.0)
 
 GIT
-  remote: https://github.com/keram-refinery/refinerycms-i18n.git
+  remote: git://github.com/keram-refinery/refinerycms-i18n.git
   revision: 076f8dc2fca5062065c7fb0483bbb1ad32f43496
   branch: refinery_light
   specs:
@@ -40,58 +34,60 @@ GIT
       routing-filter (~> 0.4.0.pre)
 
 GIT
-  remote: https://github.com/keram-refinery/refinerycms-settings.git
-  revision: ff3d283fb9c6e0c2a873acb56d253a6d943c1013
+  remote: git://github.com/keram-refinery/refinerycms.git
+  revision: 577681aed4ad103a220f2aeba2ba852952de253a
   branch: refinery_light
   specs:
-    refinerycms-settings (3.0.0.dev)
-
-GIT
-  remote: https://github.com/keram-refinery/refinerycms.git
-  revision: 1f2635e63ae6abec5402a13319f4d76e2f6a01db
-  branch: refinery_light
-  specs:
-    refinerycms (3.0.0)
+    refinerycms (3.0.0.dev)
       bundler (>= 1.2.2, < 2.0)
-      refinerycms-authentication (= 3.0.0)
-      refinerycms-core (= 3.0.0)
-      refinerycms-dashboard (= 3.0.0)
-      refinerycms-images (= 3.0.0)
-      refinerycms-pages (= 3.0.0)
-      refinerycms-resources (= 3.0.0)
-    refinerycms-authentication (3.0.0)
+      refinerycms-authentication (= 3.0.0.dev)
+      refinerycms-core (= 3.0.0.dev)
+      refinerycms-dashboard (= 3.0.0.dev)
+      refinerycms-images (= 3.0.0.dev)
+      refinerycms-pages (= 3.0.0.dev)
+      refinerycms-resources (= 3.0.0.dev)
+    refinerycms-authentication (3.0.0.dev)
       actionmailer (~> 4.0.0)
-      devise (~> 3.0.0)
-      refinerycms-core (= 3.0.0)
-    refinerycms-core (3.0.0)
+      devise (~> 3.1.0.rc2)
+      refinerycms-core (= 3.0.0.dev)
+    refinerycms-core (3.0.0.dev)
       actionpack (~> 4.0.0)
       activerecord (~> 4.0.0)
       awesome_nested_set (~> 2.1.6)
       decorators (~> 1.0.3)
       jquery-rails (~> 3.0.4)
+      jquery-ui-rails (~> 4.0.4)
       railties (~> 4.0.0)
       refinerycms-i18n (~> 3.0.0.dev)
       sass-rails (~> 4.0.0)
       truncate_html (~> 0.9)
       will_paginate (~> 3.0.4)
-    refinerycms-dashboard (3.0.0)
-      refinerycms-core (= 3.0.0)
-    refinerycms-images (3.0.0)
+    refinerycms-dashboard (3.0.0.dev)
+      refinerycms-core (= 3.0.0.dev)
+    refinerycms-images (3.0.0.dev)
       dragonfly (~> 0.9.15)
-      refinerycms-core (= 3.0.0)
-    refinerycms-pages (3.0.0)
+      refinerycms-core (= 3.0.0.dev)
+    refinerycms-pages (3.0.0.dev)
       awesome_nested_set (~> 2.1.6)
       babosa (~> 0.3.10)
-      friendly_id (~> 4.1.0.beta.2)
+      friendly_id (~> 5.0.0.beta4)
       globalize3 (~> 0.3.0)
-      refinerycms-core (= 3.0.0)
+      refinerycms-core (= 3.0.0.dev)
       seo_meta (~> 1.4.0)
-    refinerycms-resources (3.0.0)
+    refinerycms-resources (3.0.0.dev)
       dragonfly (~> 0.9.15)
-      refinerycms-core (= 3.0.0)
+      refinerycms-core (= 3.0.0.dev)
 
 GIT
-  remote: https://github.com/parndt/seo_meta.git
+  remote: git://github.com/norman/friendly_id.git
+  revision: 7a2b86664d359658b54da343894a01da5f0ddf68
+  branch: master
+  specs:
+    friendly_id (5.0.0.beta4)
+      activerecord (~> 4.0.0)
+
+GIT
+  remote: git://github.com/parndt/seo_meta.git
   revision: d44d809fb45e78a66fd8ae95b5b49a24a30a6c91
   branch: master
   specs:
@@ -99,12 +95,12 @@ GIT
       railties (>= 3.0.0)
 
 GIT
-  remote: https://github.com/rails/turbolinks.git
-  revision: d0bc8084bc7fe685d2d8ca5bba92c19575abc19d
+  remote: git://github.com/svenfuchs/routing-filter.git
+  revision: d6378d0dedf10106501974216f36908182211cc1
   branch: master
   specs:
-    turbolinks (2.0.0)
-      coffee-rails
+    routing-filter (0.4.0.pre)
+      actionpack
 
 GEM
   remote: https://rubygems.org/
@@ -134,11 +130,11 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     arel (4.0.0)
-    atomic (1.1.10)
+    atomic (1.1.13)
     awesome_nested_set (2.1.6)
       activerecord (>= 3.0.0)
     babosa (0.3.11)
-    bcrypt-ruby (3.1.1)
+    bcrypt-ruby (3.1.2)
     builder (3.1.4)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -149,36 +145,40 @@ GEM
     coffee-script-source (1.6.3)
     decorators (1.0.3)
       railties (>= 3.0.19, != 3.2.9, != 3.2.8, != 3.2.7, != 3.2.6, != 3.2.5, != 3.2.4, != 3.2.3, != 3.2.2, != 3.2.10, != 3.2.1, != 3.2.0, != 3.1.9, != 3.1.8, != 3.1.7, != 3.1.6, != 3.1.5, != 3.1.4, != 3.1.3, != 3.1.2, != 3.1.1, != 3.1.0)
-    devise (3.0.0)
+    devise (3.1.0.rc2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
       warden (~> 1.2.3)
     dragonfly (0.9.15)
       multi_json (~> 1.0)
       rack
     erubis (2.7.0)
-    execjs (1.4.0)
-      multi_json (~> 1.0)
+    execjs (2.0.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     hike (1.2.3)
-    i18n (0.6.4)
+    i18n (0.6.5)
+    jbuilder (1.5.1)
+      activesupport (>= 3.0.0)
+      multi_json (>= 1.2.0)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (4.0.4)
       jquery-rails
       railties (>= 3.1.0)
+    json (1.8.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.23)
+    mime-types (1.24)
     minitest (4.7.5)
-    multi_json (1.7.7)
+    multi_json (1.7.9)
     orm_adapter (0.4.0)
     pg (0.16.0)
     polyglot (0.3.3)
@@ -201,12 +201,17 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.0)
+    rdoc (3.12.2)
+      json (~> 1.4)
     redcarpet (3.0.0)
     sass (3.2.10)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
+    sdoc (0.3.20)
+      json (>= 1.1.3)
+      rdoc (~> 3.10)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -220,12 +225,14 @@ GEM
     thread_safe (0.1.2)
       atomic
     tilt (1.4.1)
-    treetop (1.4.14)
+    treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
     truncate_html (0.9.2)
+    turbolinks (1.3.0)
+      coffee-rails
     tzinfo (0.3.37)
-    uglifier (2.1.2)
+    uglifier (2.2.0)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.3)
@@ -236,20 +243,22 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-rails
+  coffee-rails (~> 4.0.0)
   factory_girl_rails
   friendly_id!
   globalize3!
-  jquery-rails (~> 3.0.1)
-  jquery-ui-rails (~> 4.0.3)
+  jbuilder (~> 1.2)
+  jquery-rails
+  jquery-ui-rails
+  paper_trail!
   pg
-  rails (~> 4.0.0)
+  rails (= 4.0.0)
   refinery-epiceditor!
-  refinerycms!
-  refinerycms-i18n!
-  refinerycms-settings!
+  refinerycms (~> 3.0.0.dev)!
+  refinerycms-i18n (~> 3.0.0.dev)!
   routing-filter!
-  sass-rails
+  sass-rails (~> 4.0.0)
+  sdoc
   seo_meta!
-  turbolinks (~> 2.0.0)!
+  turbolinks
   uglifier (>= 1.3.0)
