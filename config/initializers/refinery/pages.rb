@@ -2,7 +2,7 @@
 Refinery::Pages.configure do |config|
 
   # Define global page parts
-  # config.parts = [:body, :side_body]
+  config.parts = [:perex, :body, :side_body]
 
   # Configure global page parts where are active by default
   # config.default_parts = [:body, :side_body]
