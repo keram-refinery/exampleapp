@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130826224732) do
+ActiveRecord::Schema.define(version: 20130828144858) do
 
   create_table "refinery_images", force: true do |t|
     t.string   "image_mime_type", limit: 64, null: false
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20130826224732) do
 
   create_table "refinery_users", force: true do |t|
     t.string   "username",               limit: 64,                null: false
+    t.string   "full_name"
     t.string   "email",                                            null: false
     t.string   "encrypted_password",                               null: false
     t.string   "slug",                   limit: 64,                null: false

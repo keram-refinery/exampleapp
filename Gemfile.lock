@@ -1,10 +1,18 @@
 GIT
   remote: git://github.com/airblade/paper_trail.git
-  revision: b4e53f861a58ef46c698c42f0ec044535b100c3b
+  revision: 98848bb9b2db2bb4e1cbf18ba4a5a3b748451485
   branch: master
   specs:
     paper_trail (3.0.0.beta)
       activerecord (>= 3.0, < 5.0)
+
+GIT
+  remote: git://github.com/collectiveidea/awesome_nested_set.git
+  revision: 707dbec95c5c759cec2460ea29face53c11568f2
+  branch: master
+  specs:
+    awesome_nested_set (3.0.0.rc.1)
+      activerecord (~> 4.0.0)
 
 GIT
   remote: git://github.com/keram-refinery/globalize3.git
@@ -18,7 +26,7 @@ GIT
 
 GIT
   remote: git://github.com/keram-refinery/refinery-epiceditor.git
-  revision: 7bd332bf4422833895581ad985e43926f33c83e6
+  revision: d6c704df76415506f1b9a3e230c787ffc4895ddc
   branch: master
   specs:
     refinery-epiceditor (0.0.1)
@@ -35,7 +43,7 @@ GIT
 
 GIT
   remote: git://github.com/keram-refinery/refinerycms.git
-  revision: 577681aed4ad103a220f2aeba2ba852952de253a
+  revision: fc25f8839ed1ebe23475ad3baf04781aa55a09cb
   branch: refinery_light
   specs:
     refinerycms (3.0.0.dev)
@@ -53,7 +61,7 @@ GIT
     refinerycms-core (3.0.0.dev)
       actionpack (~> 4.0.0)
       activerecord (~> 4.0.0)
-      awesome_nested_set (~> 2.1.6)
+      awesome_nested_set (~> 3.0.0.rc.1)
       decorators (~> 1.0.3)
       jquery-rails (~> 3.0.4)
       jquery-ui-rails (~> 4.0.4)
@@ -68,7 +76,7 @@ GIT
       dragonfly (~> 0.9.15)
       refinerycms-core (= 3.0.0.dev)
     refinerycms-pages (3.0.0.dev)
-      awesome_nested_set (~> 2.1.6)
+      awesome_nested_set (~> 3.0.0.rc.1)
       babosa (~> 0.3.10)
       friendly_id (~> 5.0.0.beta4)
       globalize3 (~> 0.3.0)
@@ -79,11 +87,19 @@ GIT
       refinerycms-core (= 3.0.0.dev)
 
 GIT
-  remote: git://github.com/norman/friendly_id.git
-  revision: 7a2b86664d359658b54da343894a01da5f0ddf68
+  remote: git://github.com/norman/friendly_id-globalize.git
+  revision: 40d54091ef5d0bffcde0d7e50dcf203b220c8487
   branch: master
   specs:
-    friendly_id (5.0.0.beta4)
+    friendly_id-globalize (1.0.0.alpha1)
+      friendly_id (>= 5.0.0.beta4, < 6.0)
+
+GIT
+  remote: git://github.com/norman/friendly_id.git
+  revision: 3ce9e3c3fc3d3db9015e8e6c39afca8ac5709707
+  branch: master
+  specs:
+    friendly_id (5.0.0.rc1)
       activerecord (~> 4.0.0)
 
 GIT
@@ -131,8 +147,6 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.13)
-    awesome_nested_set (2.1.6)
-      activerecord (>= 3.0.0)
     babosa (0.3.11)
     bcrypt-ruby (3.1.2)
     builder (3.1.4)
@@ -155,7 +169,7 @@ GEM
       multi_json (~> 1.0)
       rack
     erubis (2.7.0)
-    execjs (2.0.0)
+    execjs (2.0.1)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.2.1)
@@ -232,7 +246,7 @@ GEM
     turbolinks (1.3.0)
       coffee-rails
     tzinfo (0.3.37)
-    uglifier (2.2.0)
+    uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.3)
@@ -243,9 +257,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_nested_set!
   coffee-rails (~> 4.0.0)
   factory_girl_rails
   friendly_id!
+  friendly_id-globalize!
   globalize3!
   jbuilder (~> 1.2)
   jquery-rails

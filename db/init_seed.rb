@@ -16,7 +16,8 @@ module Refinery
     def self.import_users
       users = [
         {:username => 'admin', :email => 'admin@admin.com', :roles => [:superuser, :refinery]},
-        {:username => 'test', :email => 'test@test.com', :roles => [:refinery]}
+        {:username => 'test', :email => 'test@test.com', :roles => [:refinery]},
+        {:username => 'demo', :email => 'demo@demo.com', :password => 'demo', :password => 'demo', :roles => [:refinery]}
       ]
 
       users.each do |user|
@@ -24,7 +25,8 @@ module Refinery
         roles = user.delete(:roles)
         unless u
           p = (Rails.env.production? && false) ? (0...32).map{ ('a'..'z').to_a[rand(26)] }.join : 'nbusr123'
-          u = User.create(user.merge({:password => p, :password_confirmation => p}))
+          user.merge!({:password => p, :password_confirmation => p}) unless user[:password]
+          u = User.create(user)
           puts "User \"#{user[:username]}\" with email \"#{user[:email]}\" was created."
         end
 
