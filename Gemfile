@@ -49,9 +49,9 @@ end
 gem 'friendly_id', github: 'norman/friendly_id', branch: 'master'
 gem 'friendly_id-globalize', github: 'norman/friendly_id-globalize', branch: 'master'
 gem 'globalize', github: 'globalize/globalize', branch: 'master'
-gem 'devise', github: 'plataformatec/devise', branch: 'master'
+gem 'devise'#, github: 'plataformatec/devise', branch: 'master'
 gem 'routing-filter', github: 'svenfuchs/routing-filter', branch: 'master'
-gem 'seo_meta', github: 'parndt/seo_meta', branch: 'rails4'
+gem 'seo_meta', github: 'keram-refinery/seo_meta', branch: 'rails4'
 gem 'awesome_nested_set', github: 'collectiveidea/awesome_nested_set', branch: 'master'
 gem 'i18n-iso639matrix', '~> 0.0.1', github: 'keram/i18n-iso639matrix', branch: 'master'
 
