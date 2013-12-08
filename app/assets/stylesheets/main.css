@@ -1,0 +1,668 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ===== Initializr Styles ==================================================
+   Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
+   ========================================================================== */
+
+body {
+    font: 16px/1.625em Helvetica, Helvetica Neue, Arial;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+/* ===================
+    ALL: Orange Theme
+   =================== */
+
+#header-wrapper {
+    border-bottom: 10px solid #ed530c;
+    /* border-bottom: 20px solid #e44d26;*/
+}
+
+#footer-wrapper,
+.main aside {
+    border-top: 10px solid #ed530c;
+}
+
+body,
+.main aside {
+    background-color: #22A7F2;
+}
+
+#main-wrapper {
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+.title {
+    color: #fff;
+}
+
+/* ==============
+    MOBILE: Menu
+   ============== */
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+#header nav a,
+#footer nav a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 25px;
+}
+
+nav a:hover,
+nav a:visited {
+    color: #fff;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ==============
+    MOBILE: Main
+   ============== */
+
+.main {
+    padding: 30px 0;
+}
+
+.main article h1 {
+    font-size: 2em;
+}
+
+.main aside {
+    color: #fff;
+    padding: 0px 5% 10px;
+}
+
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+.ie7 .title {
+    padding-top: 20px;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+    color: #333;
+}
+
+p, pre, article {
+    margin: 0 0 1em;
+}
+
+
+blockquote #body{
+    font-style: italic;
+}
+
+footer {
+    clear: both;
+}
+
+#locales {
+    float: right;
+}
+
+#locales span {
+    padding-left: 5px;
+    margin-left: 5px;
+}
+
+#header {
+    min-height: 126px;
+}
+
+#header,
+#footer {
+    color: #C8E9FC;
+}
+
+#header a,
+#footer a {
+    color: #fff;
+}
+
+#header nav a {
+    background-color: #fff;
+    color: #ed530c;
+}
+
+#header .selected > a,
+#footer nav a {
+    background-color: #ed530c;
+    font-weight: bold;
+    color: #fff;
+}
+
+#header nav a:hover,
+#footer nav a:hover {
+    background-color: #ed530c;
+    color: #fff;
+}
+
+#header nav a {
+    border-radius: 5px 5px 0 0;
+}
+
+#footer nav a {
+    border-radius: 0px 0px 5px 5px;
+}
+
+#footer p {
+    padding-top: 15px;
+}
+
+#logo {
+    margin: 0;
+    clear: both;
+}
+
+#logo a {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: top left;
+    height: 49px;
+    width: 240px;
+    margin: 0;
+    padding: 0;
+    color: #F5F6F7;
+}
+
+
+#logo a:hover {
+    color: #fff;
+}
+
+#logo .site {
+    display: inline-block;
+    width: 155px;
+    height: 100%;
+    overflow: hidden;
+    text-indent: 100%;
+}
+
+#logo .domain {
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+    line-height: 168%;
+}
+
+#top {
+    padding-top: 5px;
+}
+
+#perex {
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    font-size: 125%;
+}
+
+#perex p {
+    margin-bottom: 0;
+}
+
+#body ul:not(.records) li {
+    margin-bottom: 0.5em;
+    padding-left: 0.5em;
+}
+
+#content {
+    h1, h2, h3, h4 {
+        line-height: 1.25em;
+    }
+
+    a {
+        color: #ed530c;
+    }
+
+    a:hover {
+        background: #E44D26;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    a:active {
+        background: #fff;
+        color: #E44D26;
+    }
+}
+
+.records {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 1em;
+
+    > li {
+        padding-left: 0;
+        border-bottom: solid 1px #ccc;
+    }
+
+    a {
+        display: block;
+        font-weight: 100;
+        color: #E44D26;
+    }
+
+    a:hover {
+        background: #E44D26;
+        color: #fff;
+    }
+}
+
+aside ul {
+    list-style: none;
+    padding: 0px;
+}
+
+/* semantic classes */
+.label {
+    background-color: #BFBFBF;
+    border-radius: 3px 3px 3px 3px;
+    color: #fff;
+    font-size: 9.75px;
+    font-weight: bold;
+    padding: 1px 3px 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.label.important {
+  background-color: #c43c35;
+}
+
+.label.warning {
+  background-color: #f89406;
+}
+
+.label.success {
+  background-color: #46a546;
+}
+
+.label.notice {
+  background-color: #62cffc;
+}
+
+.hide,
+.js .js-hide,
+.no-js .nojs-hide {
+    display: none !important;
+}
+
+.js .initialise {
+    visibility: hidden;
+}
+
+.hide-overflow {
+    overflow: hidden;
+}
+
+.less-important {
+    color: #727272;
+}
+
+.preview {
+    color: #A3A093;
+}
+
+.note {
+    color: #777;
+    font-size: small;
+}
+
+/* flash messages */
+.flash {
+    padding: 8px 8px 8px 30px;
+    margin-bottom: 20px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: 7px 12px;
+    background-color: #C7E9FC;
+    border: 1px solid #738F9C;
+    background-image: asset-url('refinery/icons/information.png');
+    clear: both;
+}
+
+.flash-success,
+.flash-message {
+    border-color: #00A017;
+    color: #00A017;
+    background-color: #E0F5E0;
+    background-image: asset-url('refinery/icons/accept.png') ;
+}
+
+.error-explanation {
+    background: 7px 12px no-repeat asset-url('refinery/icons/cancel.png') #FFB1B1;
+    padding: 10px 5px 5px 30px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border: 1px solid #f00;
+    border-top-width: 3px;
+    margin-bottom: 20px;
+}
+
+.error-explanation p {
+    font-weight: normal;
+}
+
+.flash-error,
+.flash-alert {
+    border-color: #A00027;
+    color: #A00027;
+    background-image: asset-url('refinery/icons/cancel.png');
+    background-color: #FFBEBE;
+}
+
+.flash-close {
+    text-transform: lowercase;
+    position: absolute;
+    right: 9px;
+    top: 7px;
+}
+
+.hemisquare,
+.block-aside,
+.block-main {
+    width: 48%;
+    float: left;
+}
+
+.block-aside {
+    width: 38%;
+}
+
+.block-main {
+    width: 61%;
+}
+
+.right-side {
+    float: right;
+}
+
+.block-aside.right-side {
+    width: 37%;
+}
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+
+/* ====================
+    INTERMEDIATE: Menu
+   ==================== */
+    #header nav a,
+    #footer nav a {
+        float: left;
+    }
+
+    nav li:first-child a {
+        margin-left: 0;
+    }
+
+    nav li:last-child a {
+        margin-right: 0;
+    }
+
+
+    #header nav a,
+    #footer nav a {
+        margin-left: 15px;
+        text-align: center;
+    }
+
+
+    #side_body {
+        float: right;
+        width: 37%;
+    }
+
+
+
+/* ========================
+    INTERMEDIATE: IE Fixes
+   ======================== */
+
+    nav ul li {
+        display: inline;
+    }
+
+    .oldie nav a {
+        margin: 0 0.7%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    #header nav,
+    #footer nav {
+        float: right;
+        /* background: linear-gradient(top, left, rgba(255, 255, 255, 0.6)) */
+    }
+
+    #body {
+        float: left;
+        width: 60%;
+    }
+
+    .no_side_body #body {
+        width: 100%;
+        float: none;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+
+/* ===============
+    Maximal Width
+   =============== */
+
+    .wrapper {
+        width: 1026px; /* 1140px - 10% for margins */
+        margin: 0 auto;
+    }
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

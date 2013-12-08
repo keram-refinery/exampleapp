@@ -11,17 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130828144858) do
+ActiveRecord::Schema.define(version: 20131004195032) do
 
-  create_table "refinery_images", force: true do |t|
-    t.string   "image_mime_type", limit: 64, null: false
-    t.string   "image_name",                 null: false
-    t.integer  "image_size",                 null: false
-    t.integer  "image_width",                null: false
-    t.integer  "image_height",               null: false
-    t.string   "image_uid",                  null: false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "refinery_image_translations", force: true do |t|
+    t.integer  "refinery_image_id", null: false
+    t.string   "locale",            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "alt"
+    t.string   "caption"
+  end
+
+  add_index "refinery_image_translations", ["locale"], name: "index_refinery_image_translations_on_locale", using: :btree
+  add_index "refinery_image_translations", ["refinery_image_id"], name: "index_refinery_image_translations_on_refinery_image_id", using: :btree
+
+  create_table "refinery_images", force: true do |t|
+    t.string   "image_mime_type", null: false
+    t.string   "image_name",      null: false
+    t.integer  "image_size",      null: false
+    t.integer  "image_width",     null: false
+    t.integer  "image_height",    null: false
+    t.string   "image_uid",       null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "refinery_images", ["image_name"], name: "index_refinery_images_on_image_name", unique: true, using: :btree
@@ -43,58 +58,60 @@ ActiveRecord::Schema.define(version: 20130828144858) do
     t.string   "title",                     null: false
     t.integer  "position",   default: 0,    null: false
     t.boolean  "active",     default: true, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_index "refinery_page_parts", ["page_id", "title"], name: "index_refinery_page_parts_on_page_id_and_title", unique: true, using: :btree
 
   create_table "refinery_page_translations", force: true do |t|
-    t.integer  "refinery_page_id", null: false
-    t.string   "locale",           null: false
+    t.integer  "refinery_page_id",                              null: false
+    t.string   "locale",                                        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "title"
+    t.string   "title",                       default: "",      null: false
+    t.string   "slug",                        default: "",      null: false
+    t.string   "signature",        limit: 32, default: "",      null: false
+    t.string   "status",           limit: 16, default: "draft", null: false
     t.string   "custom_slug"
-    t.string   "menu_title"
-    t.string   "slug"
   end
 
+  add_index "refinery_page_translations", ["locale", "status"], name: "index_refinery_page_translations_on_locale_and_status", using: :btree
   add_index "refinery_page_translations", ["locale"], name: "index_refinery_page_translations_on_locale", using: :btree
   add_index "refinery_page_translations", ["refinery_page_id"], name: "index_refinery_page_translations_on_refinery_page_id", using: :btree
-  add_index "refinery_page_translations", ["slug"], name: "index_refinery_page_translations_on_slug", using: :btree
+  add_index "refinery_page_translations", ["signature", "locale"], name: "index_on_signature_locale", unique: true, using: :btree
+  add_index "refinery_page_translations", ["title"], name: "index_refinery_page_translations_on_title", using: :btree
 
   create_table "refinery_pages", force: true do |t|
     t.integer  "parent_id"
     t.string   "slug"
     t.boolean  "show_in_menu",        default: true
     t.string   "link_url"
-    t.boolean  "deletable",           default: true,          null: false
-    t.boolean  "draft",               default: false,         null: false
-    t.boolean  "skip_to_first_child", default: false,         null: false
-    t.integer  "lft",                                         null: false
-    t.integer  "rgt",                                         null: false
-    t.integer  "depth",               default: 0,             null: false
-    t.string   "view_template",       default: "show",        null: false
-    t.string   "layout_template",     default: "application", null: false
+    t.boolean  "deletable",           default: true,      null: false
+    t.boolean  "skip_to_first_child", default: false,     null: false
+    t.integer  "lft",                                     null: false
+    t.integer  "rgt",                                     null: false
+    t.integer  "depth",               default: 0,         null: false
     t.string   "plugin_page_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "dom_id"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+    t.string   "page_type",           default: "WebPage", null: false
   end
 
-  add_index "refinery_pages", ["draft", "show_in_menu", "lft", "rgt"], name: "index_refinery_pages_on_draft_and_show_in_menu_and_lft_and_rgt", using: :btree
   add_index "refinery_pages", ["lft", "rgt"], name: "index_refinery_pages_on_lft_and_rgt", using: :btree
   add_index "refinery_pages", ["parent_id"], name: "index_refinery_pages_on_parent_id", using: :btree
   add_index "refinery_pages", ["rgt"], name: "index_refinery_pages_on_rgt", using: :btree
+  add_index "refinery_pages", ["show_in_menu", "lft", "rgt"], name: "index_refinery_pages_on_show_in_menu_and_lft_and_rgt", using: :btree
   add_index "refinery_pages", ["updated_at"], name: "index_refinery_pages_on_updated_at", using: :btree
 
   create_table "refinery_resources", force: true do |t|
-    t.string   "file_mime_type", limit: 128, null: false
-    t.string   "file_name",                  null: false
-    t.integer  "file_size",                  null: false
-    t.string   "file_uid",                   null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "file_mime_type", null: false
+    t.string   "file_name",      null: false
+    t.integer  "file_size",      null: false
+    t.string   "file_uid",       null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "refinery_resources", ["file_name"], name: "index_refinery_resources_on_file_name", unique: true, using: :btree
@@ -130,6 +147,8 @@ ActiveRecord::Schema.define(version: 20130828144858) do
     t.string   "email",                                            null: false
     t.string   "encrypted_password",                               null: false
     t.string   "slug",                   limit: 64,                null: false
+    t.text     "about"
+    t.integer  "image_id"
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -139,8 +158,9 @@ ActiveRecord::Schema.define(version: 20130828144858) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.string   "locale",                 limit: 8,  default: "en", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "frontend_locale",        limit: 8,  default: "en", null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
   end
 
   add_index "refinery_users", ["email"], name: "index_refinery_users_on_email", unique: true, using: :btree
