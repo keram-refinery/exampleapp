@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '~> 4.0.1'
 
 gem 'pg'
 
@@ -26,7 +26,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 1.5'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -45,29 +45,21 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'jquery-ui-rails'
-
 # temporarily for solving dependency issues
 gem 'friendly_id', github: 'norman/friendly_id', branch: 'master'
 gem 'friendly_id-globalize', github: 'norman/friendly_id-globalize', branch: 'master'
-gem 'paper_trail', github: 'airblade/paper_trail', branch: 'master'
-gem 'globalize3', github: 'keram-refinery/globalize3', branch: 'rails4'
+gem 'globalize', github: 'globalize/globalize', branch: 'master'
+gem 'devise', github: 'plataformatec/devise', branch: 'master'
 gem 'routing-filter', github: 'svenfuchs/routing-filter', branch: 'master'
+gem 'seo_meta', github: 'parndt/seo_meta', branch: 'rails4'
 gem 'awesome_nested_set', github: 'collectiveidea/awesome_nested_set', branch: 'master'
-gem 'seo_meta', github: 'parndt/seo_meta', branch: 'master'
-gem 'factory_girl_rails'
+gem 'i18n-iso639matrix', '~> 0.0.1', github: 'keram/i18n-iso639matrix', branch: 'master'
 
 # Refinery CMS
-gem 'refinerycms', '~> 3.0.0.dev', github: 'keram-refinery/refinerycms', branch: 'refinery_light'
-gem 'refinerycms-i18n', '~> 3.0.0.dev', github: 'keram-refinery/refinerycms-i18n', branch: 'refinery_light'
+gem 'refinerycms', '~> 2.718.0.dev', github: 'keram-refinery/refinerycms', branch: 'refinery_light'
+gem 'refinerycms-i18n', '~> 2.718.0.dev', github: 'keram-refinery/refinerycms-i18n', branch: 'refinery_light'
+gem 'refinerycms-links', '~> 0.0.1', github: 'keram/refinerycms-links', branch: 'master'
+gem 'refinerycms-clientside', '~> 0.0.1', github: 'keram-refinery/refinerycms-clientside', branch: 'master'
 
 # Specify your preferred WYSIWYG editor
-gem 'refinery-epiceditor', github: 'keram-refinery/refinery-epiceditor', branch: 'master'
-
-# Specify additional Refinery CMS Extensions here (all optional):
-#  gem 'refinerycms-blog', '~> 3.0.0.dev' # github: 'keram-refinery/refinerycms-blog', branch: 'refinery_light'
-#  gem 'refinerycms-inquiries', '~> 3.0.0.dev' # github: 'keram-refinery/refinerycms-inquiries', branch: 'refinery_light'
-#  gem 'refinerycms-calendar', '~> 3.0.0.dev' # github: 'keram-refinery/refinerycms-calendar', branch: 'refinery_light'
-#  gem 'refinerycms-search', '~> 3.0.0.dev' # github: 'keram-refinery/refinerycms-search', branch: 'refinery_light'
-#  gem 'refinerycms-page-images', '~> 3.0.0.dev' # github: 'keram-refinery/refinerycms-page-images', branch: 'refinery_light'
-
+gem 'refinerycms-tinymce', github: 'keram/refinerycms-tinymce', branch: 'master'
